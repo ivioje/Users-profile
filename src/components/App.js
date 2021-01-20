@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './App.css'
-import CardList from './CardList.js'
+import '../App.css'
+import CardList from '../components/CardList'
 
 class App extends Component {
   constructor (props) {
@@ -35,12 +35,10 @@ class App extends Component {
       return <div>Loading...</div>
     } else {
       return (
-        <div className="page">
+        <div className='page'>
           <h1>Users profiles</h1>
-          <CardList profiles = {profiles}/>
-
+          <CardList profiles={profiles} />
         </div>
-       
 
         // <div>
         //   {profiles.map((profile, i) => {

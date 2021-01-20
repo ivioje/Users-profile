@@ -1,6 +1,6 @@
 import React from 'react'
-import Cards from './Cards.js'
-import './index.css'
+import Cards from '../components/Cards'
+import '../index.css'
 
 const CardList = ({ profiles }) => {
   return (
