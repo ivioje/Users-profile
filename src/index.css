@@ -1,23 +1,39 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* width: 100%; */
-  background-color: rgb(241, 241, 241);
+  font-family: serif;
+  width: 100%;
+  background-color: white;
 }
+
 .users {
   border: 1px solid rgb(253, 253, 253);
-  margin: 10px;
+  margin: 8px;
   background-color: rgb(255, 255, 255);
   color: rgb(32, 32, 32);
   width: 100%;
-  height: 40vh;
-  border-radius: 10px;
+  height: auto;
+  border-radius: 5px;
   text-align: left;
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(167, 167, 167, 0.48);
+  -moz-box-shadow: 0px 2px 10px 0px rgba(170, 170, 170, 0.48);
+  box-shadow: 0px 2px 10px 0px rgba(172, 172, 172, 0.48);
 }
+
+.users p {
+  font-size: 14px;
+  padding: 3px;
+  font-weight: bold;
+  color: rgb(119, 110, 113);
+}
+
+.users p b {
+  background: rgb(240, 237, 239);
+  margin-left: 5px;
+  color: rgb(65, 65, 65);
+  letter-spacing: 0.1em;
+  font-size: 15px;
+}
+
 .app {
   display: flex;
   align-items: center;
@@ -29,22 +45,16 @@ body {
   display: flex;
   gap: 5px;
   background: rgb(14, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(14, 0, 36, 1) 0%,
-    rgba(54, 188, 235, 1) 0%,
-    rgba(175, 65, 176, 1) 67%
-  );
-  color: rgb(255, 255, 255);
-  font-size: 10px;
+  background: rgb(231, 231, 231);
+  color: rgb(31, 31, 31);
+  font-size: 16px;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   font-weight: bold;
-  -webkit-box-shadow: 0px 2px 10px 0px rgba(50, 50, 50, 0.48);
-  -moz-box-shadow: 0px 2px 10px 0px rgba(50, 50, 50, 0.48);
-  box-shadow: 0px 2px 10px 0px rgba(50, 50, 50, 0.48);
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 .all_details {
-  padding: 5px;
+  padding: 10px;
 }

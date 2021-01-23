@@ -14,6 +14,12 @@ const CardList = ({ profiles }) => {
               UserName={profile.UserName}
               Gender={profile.Gender}
               Email={profile.Email}
+              CreditCardNumber={profile.CreditCardNumber}
+              CreditCardType={profile.CreditCardType}
+              DomainName={profile.DomainName}
+              PhoneNumber={profile.PhoneNumber}
+              username={profile.UserName}
+              PaymentMethod={profile.PaymentMethod}
             />
           </div>
         )

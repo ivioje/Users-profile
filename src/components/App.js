@@ -8,9 +8,10 @@ class App extends Component {
     this.state = {
       profiles: [],
       error: null,
-      isLoaded: false
+      isLoaded: false,
     }
   }
+
   componentDidMount () {
     fetch('https://api.enye.tech/v1/challenge/records')
       .then(res => res.json())
@@ -28,7 +29,8 @@ class App extends Component {
   }
 
   render () {
-    const { error, isLoaded, profiles } = this.state
+    const { error, isLoaded, profiles } = this.state 
+
     if (error) {
       return <div>Error</div>
     } else if (!isLoaded) {
@@ -36,20 +38,14 @@ class App extends Component {
     } else {
       return (
         <div className='page'>
-          <h1>Users profiles</h1>
+          <p>this project is under construction...</p>
+          <h4>title & light/dark mode</h4>
+          <h4>filter by : gender, payment method ...etc</h4>
+          <h4>search box</h4>
+          <h4>pagination</h4>
+
           <CardList profiles={profiles} />
         </div>
-
-        // <div>
-        //   {profiles.map((profile, i) => {
-        //     return (
-        //       <ul key={profile.UserName} className='users'>
-        //         <li>{profile.FirstName}</li>
-        //         <li>{profile.LastName}</li>
-        //       </ul>
-        //     )
-        //   })}
-        // </div>
       )
     }
   }
