@@ -57,7 +57,7 @@ body {
   font-weight: bolder;
   color: rgb(20, 20, 20);
   font-size: 16px;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   margin: 2px;
 }
 .all_details {
@@ -74,9 +74,35 @@ body {
   margin-top: 20px;
 }
 
-input[type=search] {
+input[type="search"] {
   padding: 10px;
   border: 1px solid rgb(231, 231, 231);
   width: 50%;
   text-align: center;
+}
+.paginate {
+  margin: 20px;
+}
+.paginate,
+.paginate div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.paginate div p a {
+  padding: 10px;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(36, 36, 36);
+  border-radius: 50%;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(167, 167, 167, 0.48);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(170, 170, 170, 0.48);
+  box-shadow: 0px 2px 2px 0px rgba(206, 206, 206, 0.48);
+}
+.paginate div p {
+  margin: 10px;
 }

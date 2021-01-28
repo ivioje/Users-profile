@@ -17,39 +17,46 @@ const SkeletonCard = () => {
           .map((users, i) => (
             <div key={i} className='all_details load'>
               <div>
-                <Skeleton height={40} width={300} />
+                <Skeleton height={40} width={280} />
               </div>
 
               <p>
-                <Skeleton height={10} width={90} />
+                <Skeleton height={10} width={80} />
                 <b>
                   <Skeleton height={10} width={200} />
                 </b>
               </p>
 
               <p>
-                <Skeleton height={10} width={100} />
+                <Skeleton height={10} width={90} />
                 <b>
-                  <Skeleton height={10} width={190} />
+                  <Skeleton height={10} width={170} />
+                </b>
+              </p>
+
+              <p>
+                <Skeleton height={10} width={90} />
+                <b>
+                  <Skeleton height={10} width={170} />
                 </b>
               </p>
 
               <p>
                 <Skeleton height={10} width={100} />
                 <b>
-                  <Skeleton height={10} width={190} />
+                  <Skeleton height={10} width={175} />
                 </b>
               </p>
 
               <p>
-                <Skeleton height={10} width={105} />
+                <Skeleton height={10} width={100} />
                 <b>
-                  <Skeleton height={10} width={185} />
+                  <Skeleton height={10} width={170} />
                 </b>
               </p>
 
               <p>
-                <Skeleton height={10} width={110} />
+                <Skeleton height={10} width={90} />
                 <b>
                   <Skeleton height={10} width={180} />
                 </b>
@@ -58,21 +65,14 @@ const SkeletonCard = () => {
               <p>
                 <Skeleton height={10} width={100} />
                 <b>
-                  <Skeleton height={10} width={190} />
+                  <Skeleton height={10} width={170} />
                 </b>
               </p>
 
               <p>
-                <Skeleton height={10} width={110} />
+                <Skeleton height={10} width={90} />
                 <b>
                   <Skeleton height={10} width={180} />
-                </b>
-              </p>
-
-              <p>
-                <Skeleton height={10} width={100} />
-                <b>
-                  <Skeleton height={10} width={190} />
                 </b>
               </p>
             </div>
