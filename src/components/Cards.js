@@ -22,10 +22,10 @@ const Cards = ({
       </div>
       <div>
         <p>
-          Gender : <b> {Gender} </b>{' '}
+          Gender : <b> {Gender} </b>
         </p>
         <p>
-          Email : <b> {Email} </b>{' '}
+          Email : <b> {Email} </b>
         </p>
         <p>
           UserName : <b> {UserName}</b>

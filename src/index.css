@@ -63,6 +63,16 @@ body {
 .all_details {
   padding: 10px;
 }
+.load p b {
+  margin: 5px;
+}
+.load-app {
+  margin-top: 80px;
+}
+.search-placeholder {
+  text-align: center;
+  margin-top: 20px;
+}
 
 input[type=search] {
   padding: 10px;

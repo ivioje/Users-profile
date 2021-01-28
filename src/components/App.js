@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import '../App.css'
 import CardList from '../components/CardList'
 import SearchBox from './searchBox'
-import loader from '../image/757.gif'
+// import loader from '../image/785.gif'
+import SkeletonCard from '../components/SkeletonCard.js'
 
 class App extends Component {
   constructor (props) {
@@ -20,7 +21,11 @@ class App extends Component {
       .then(res => res.json())
       .then(
         result => {
-          this.setState({ isLoaded: true, profiles: result.records.profiles })
+         const timer = setTimeout(() => {
+
+            this.setState({ isLoaded: true, profiles: result.records.profiles });
+          }, 5000);
+          return () => clearTimeout(timer)
         },
         error => {
           this.setState({
@@ -46,10 +51,14 @@ class App extends Component {
       return <div>Error</div>
     } else if (!isLoaded) {
       return (
-        <div className='loader'>
-          <img src={loader} alt='loader' />
-          <p>please wait...</p>
+        <div style={{textAlign: 'center'}}>
+          <h3>this project is under construction</h3>
+        <SkeletonCard />
         </div>
+        // <div className='loader'>
+        //   <img src={loader} alt='loader' />
+        //   <p>please wait...</p>
+        // </div>
       )
     } else {
       return (
