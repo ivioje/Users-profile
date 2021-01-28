@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap");
+
 body {
   margin: 0;
   font-family: serif;
   width: 100%;
   background-color: white;
+  font-family: "Antic Slab", serif;
 }
 
 .users {
@@ -20,18 +23,19 @@ body {
 }
 
 .users p {
-  font-size: 14px;
+  font-size: 13px;
   padding: 3px;
-  font-weight: bold;
+  font-weight: lighter;
   color: rgb(119, 110, 113);
+  letter-spacing: 0.08em;
 }
 
 .users p b {
-  background: rgb(247, 239, 243);
+  background: rgb(255, 247, 251);
   margin-left: 5px;
   color: rgb(65, 65, 65);
   letter-spacing: 0.1em;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .app {
@@ -43,18 +47,26 @@ body {
 }
 .header {
   display: flex;
-  background: rgb(231, 231, 231);
-  color: rgb(31, 31, 31);
-  font-size: 16px;
+  background: rgb(240, 240, 240);
   align-items: center;
   justify-content: center;
   padding: 10px;
-  font-weight: bold;
   margin-bottom: 5px;
 }
-.header h2 {
-  margin: 5px;
+.header p {
+  font-weight: bolder;
+  color: rgb(20, 20, 20);
+  font-size: 16px;
+  letter-spacing: .2em;
+  margin: 2px;
 }
 .all_details {
   padding: 10px;
+}
+
+input[type=search] {
+  padding: 10px;
+  border: 1px solid rgb(231, 231, 231);
+  width: 50%;
+  text-align: center;
 }

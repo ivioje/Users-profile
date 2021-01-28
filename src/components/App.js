@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 import CardList from '../components/CardList'
+import SearchBox from './searchBox'
 
 class App extends Component {
   constructor (props) {
@@ -8,7 +9,7 @@ class App extends Component {
     this.state = {
       profiles: [],
       error: null,
-      isLoaded: false,
+      isLoaded: false
     }
   }
 
@@ -29,7 +30,7 @@ class App extends Component {
   }
 
   render () {
-    const { error, isLoaded, profiles } = this.state 
+    const { error, isLoaded, profiles } = this.state
 
     if (error) {
       return <div>Error</div>
@@ -41,7 +42,7 @@ class App extends Component {
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
           <h4>filter by : gender, payment method ...etc</h4>
-          <h4>search box</h4>
+          <SearchBox />
           <h4>pagination</h4>
 
           <CardList profiles={profiles} />

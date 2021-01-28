@@ -17,8 +17,8 @@ const Cards = ({
   return (
     <div key={UserName} className='users'>
       <div className='header'>
-        <h2>{FirstName}</h2>
-        <h2>{LastName}</h2>
+        <p>{FirstName.toUpperCase()}</p>
+        <p>{LastName.toUpperCase()}</p>
       </div>
       <div>
         <p>
