@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import CardList from '../components/CardList'
 import SearchBox from './searchBox'
+import loader from '../image/757.gif'
 
 class App extends Component {
   constructor (props) {
@@ -31,7 +32,7 @@ class App extends Component {
   }
 
   onSearchChange = e => {
-   e ? this.setState({ searchfield: e.target.value }) : <p>No data</p>
+    this.setState({ searchfield: e.target.value })
   }
 
   render () {
@@ -44,7 +45,12 @@ class App extends Component {
     if (error) {
       return <div>Error</div>
     } else if (!isLoaded) {
-      return <div>Loading...</div>
+      return (
+        <div className='loader'>
+          <img src={loader} alt='loader' />
+          <p>please wait...</p>
+        </div>
+      )
     } else {
       return (
         <div className='page'>
