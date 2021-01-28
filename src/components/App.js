@@ -9,7 +9,8 @@ class App extends Component {
     this.state = {
       profiles: [],
       error: null,
-      isLoaded: false
+      isLoaded: false,
+      searchfield: ''
     }
   }
 
@@ -29,8 +30,16 @@ class App extends Component {
       )
   }
 
+  onSearchChange = e => {
+   e ? this.setState({ searchfield: e.target.value }) : <p>No data</p>
+  }
+
   render () {
-    const { error, isLoaded, profiles } = this.state
+    const { error, isLoaded, profiles, searchfield } = this.state
+    //search functionality
+    const searchRecords = profiles.filter(users =>
+      users.FirstName.toLowerCase().includes(searchfield.toLowerCase())
+    )
 
     if (error) {
       return <div>Error</div>
@@ -42,10 +51,11 @@ class App extends Component {
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
           <h4>filter by : gender, payment method ...etc</h4>
-          <SearchBox />
+          <SearchBox searchChange={this.onSearchChange} />
+
           <h4>pagination</h4>
 
-          <CardList profiles={profiles} />
+          <CardList profiles={searchRecords} />
         </div>
       )
     }
