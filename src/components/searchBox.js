@@ -4,7 +4,11 @@ import '../index.css'
 const searchBox = ({ searchChange }) => {
   return (
     <div>
-      <input type='search' placeholder='search profiles...' onChange={searchChange}/>
+      <input
+        type='search'
+        placeholder='search profiles...'
+        onChange={searchChange}
+      />
     </div>
   )
 }

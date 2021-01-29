@@ -8,13 +8,10 @@
 .page {
   text-align: center;
 }
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 40vh;
-}
-.loader p {
-  opacity: .6;
+
+.error {
+  font-size: 30px;
+  color: red;
+  text-align: center;
+  margin-top: 30vh;
 }

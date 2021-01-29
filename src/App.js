@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import CardList from './components/CardList'
+import GenderFilter from './components/GenderFilter'
 import Pagination from './components/Pagination'
 import SearchBox from './components/searchBox'
 import SkeletonCard from './components/SkeletonCard.js'
@@ -25,7 +26,7 @@ class App extends Component {
         result => {
           const timer = setTimeout(() => {
             this.setState({ isLoaded: true, profiles: result.records.profiles })
-          }, 1000)
+          }, 5000)
           return () => clearTimeout(timer)
         },
         error => {
@@ -56,14 +57,18 @@ class App extends Component {
     const currentCard = profiles.slice(indexOfFirstCard, indexOfLastCard)
     //change page
     const paginate = pageNumber => this.setState({ currentPage: pageNumber })
-    
+
     //search functionality
-    const searchRecords = currentCard.filter(users =>
-      users.FirstName.toLowerCase().includes(searchfield.toLowerCase())
+    const searchRecords = currentCard.filter(
+      users =>
+        users.FirstName.toLowerCase().includes(searchfield.toLowerCase()) ||
+        users.LastName.toLowerCase().includes(searchfield.toLowerCase())
     )
 
     if (error) {
-      return <div>Error</div>
+      return (
+        <div className='error'>! Please check your internet connection</div>
+      )
     } else if (!isLoaded) {
       return (
         <div style={{ textAlign: 'center' }}>
@@ -76,7 +81,7 @@ class App extends Component {
         <div className='page'>
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
-          <h4>filter by : gender, payment method ...etc</h4>
+          <GenderFilter />
           <SearchBox searchChange={this.onSearchChange} />
           <Pagination
             cardPerPage={cardPerPage}

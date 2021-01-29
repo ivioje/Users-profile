@@ -11,7 +11,6 @@ const Cards = ({
   CreditCardType,
   DomainName,
   PhoneNumber,
-
   PaymentMethod
 }) => {
   return (

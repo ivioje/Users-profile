@@ -28,14 +28,14 @@ const SkeletonCard = () => {
               </p>
 
               <p>
-                <Skeleton height={10} width={90} />
+                <Skeleton height={10} width={100} />
                 <b>
                   <Skeleton height={10} width={170} />
                 </b>
               </p>
 
               <p>
-                <Skeleton height={10} width={90} />
+                <Skeleton height={10} width={100} />
                 <b>
                   <Skeleton height={10} width={170} />
                 </b>
@@ -82,4 +82,4 @@ const SkeletonCard = () => {
   )
 }
 
-export default SkeletonCard
+export default SkeletonCard;
