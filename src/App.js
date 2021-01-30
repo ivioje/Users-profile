@@ -15,7 +15,8 @@ class App extends Component {
       isLoaded: false,
       searchfield: '',
       currentPage: 1,
-      cardPerPage: 20
+      cardPerPage: 20,
+      filterProfiles: []
     }
   }
 
@@ -26,7 +27,7 @@ class App extends Component {
         result => {
           const timer = setTimeout(() => {
             this.setState({ isLoaded: true, profiles: result.records.profiles })
-          }, 5000)
+          }, 1000)
           return () => clearTimeout(timer)
         },
         error => {
@@ -41,7 +42,7 @@ class App extends Component {
   onSearchChange = e => {
     this.setState({ searchfield: e.target.value })
   }
-
+ 
   render () {
     const {
       error,
@@ -63,7 +64,8 @@ class App extends Component {
       users =>
         users.FirstName.toLowerCase().includes(searchfield.toLowerCase()) ||
         users.LastName.toLowerCase().includes(searchfield.toLowerCase())
-    )
+    );
+
 
     if (error) {
       return (
@@ -81,14 +83,17 @@ class App extends Component {
         <div className='page'>
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
-          <GenderFilter />
+          <div style={{width:200}}>
+          <GenderFilter  filtering={this.filterOnChange}/>
+
+          </div>
           <SearchBox searchChange={this.onSearchChange} />
           <Pagination
             cardPerPage={cardPerPage}
             totalCards={profiles.length}
             paginate={paginate}
           />
-          <CardList profiles={searchRecords} />
+          <CardList profiles={searchRecords}  />
         </div>
       )
     }
