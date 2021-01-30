@@ -15,8 +15,7 @@ class App extends Component {
       isLoaded: false,
       searchfield: '',
       currentPage: 1,
-      cardPerPage: 20,
-      filterProfiles: []
+      cardPerPage: 20
     }
   }
 
@@ -84,7 +83,7 @@ class App extends Component {
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
           <div style={{width:200}}>
-          <GenderFilter  filtering={this.filterOnChange}/>
+          <GenderFilter />
 
           </div>
           <SearchBox searchChange={this.onSearchChange} />
