@@ -15,6 +15,7 @@ class App extends Component {
       isLoaded: false,
       searchfield: '',
       genderfield: '',
+      paymentFilter: '',
       currentPage: 1,
       cardPerPage: 20
     }
@@ -47,9 +48,13 @@ class App extends Component {
     this.setState({ genderfield: e.target.value })
   }
 
+  onPaymentMthChange = e => {
+    this.setState({ paymentFilter: e.target.value })
+  }
+
   render () {
     const {
-      error, isLoaded, profiles, searchfield, genderfield, currentPage, cardPerPage
+      error, isLoaded, profiles, searchfield, genderfield, currentPage, cardPerPage, paymentFilter
     } = this.state
     //pagination
     const indexOfLastCard = currentPage * cardPerPage
@@ -85,6 +90,16 @@ class App extends Component {
     }
     if (searchfield.length >= 1) {
       displayProfiles = searchRecords
+    }
+
+    //filter by payment method
+    const filterByPayment = currentCard.filter(({ PaymentMethod }) => {
+     return PaymentMethod.includes(paymentFilter)
+    })
+
+    let displayRecords = currentCard;
+    if(paymentFilter.length) {
+      displayRecords = filterByPayment;
     }
 
     if (error) {
