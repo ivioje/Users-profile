@@ -14,6 +14,7 @@ class App extends Component {
       error: null,
       isLoaded: false,
       searchfield: '',
+      genderfield: '',
       currentPage: 1,
       cardPerPage: 20
     }
@@ -26,7 +27,7 @@ class App extends Component {
         result => {
           const timer = setTimeout(() => {
             this.setState({ isLoaded: true, profiles: result.records.profiles })
-          }, 1000)
+          }, 2000)
           return () => clearTimeout(timer)
         },
         error => {
@@ -41,15 +42,14 @@ class App extends Component {
   onSearchChange = e => {
     this.setState({ searchfield: e.target.value })
   }
- 
+
+  onGenderChange = e => {
+    this.setState({ genderfield: e.target.value })
+  }
+
   render () {
     const {
-      error,
-      isLoaded,
-      profiles,
-      searchfield,
-      currentPage,
-      cardPerPage
+      error, isLoaded, profiles, searchfield, genderfield, currentPage, cardPerPage
     } = this.state
     //pagination
     const indexOfLastCard = currentPage * cardPerPage
@@ -59,12 +59,33 @@ class App extends Component {
     const paginate = pageNumber => this.setState({ currentPage: pageNumber })
 
     //search functionality
-    const searchRecords = currentCard.filter(
+    let searchRecords = currentCard.filter(
       users =>
         users.FirstName.toLowerCase().includes(searchfield.toLowerCase()) ||
         users.LastName.toLowerCase().includes(searchfield.toLowerCase())
-    );
+    )
 
+    // gender functionality
+    const genderRecords = currentCard.filter(({ Gender }) => {
+      return Gender.includes(genderfield)
+    })
+
+    //
+    let displayProfiles = currentCard
+
+    if (genderfield.length) {
+      displayProfiles = genderRecords
+
+      if (searchfield.length >= 1)
+        searchRecords = genderRecords.filter(
+          users =>
+            users.FirstName.toLowerCase().includes(searchfield.toLowerCase()) ||
+            users.LastName.toLowerCase().includes(searchfield.toLowerCase())
+        )
+    }
+    if (searchfield.length >= 1) {
+      displayProfiles = searchRecords
+    }
 
     if (error) {
       return (
@@ -82,17 +103,14 @@ class App extends Component {
         <div className='page'>
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
-          <div style={{width:200}}>
-          <GenderFilter />
-
-          </div>
+          <GenderFilter genderChange={this.onGenderChange} />
           <SearchBox searchChange={this.onSearchChange} />
           <Pagination
             cardPerPage={cardPerPage}
-            totalCards={profiles.length}
+            totalCards={profiles.length} //20
             paginate={paginate}
           />
-          <CardList profiles={searchRecords}  />
+          <CardList profiles={displayProfiles} />
         </div>
       )
     }
