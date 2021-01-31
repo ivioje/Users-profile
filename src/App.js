@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import CardList from './components/CardList'
+import FilterByPaymentMtd from './components/FilterByPaymentMtd'
 import GenderFilter from './components/GenderFilter'
 import Pagination from './components/Pagination'
 import SearchBox from './components/searchBox'
@@ -48,13 +49,20 @@ class App extends Component {
     this.setState({ genderfield: e.target.value })
   }
 
-  onPaymentMthChange = e => {
+  onPaymentMtdChange = e => {
     this.setState({ paymentFilter: e.target.value })
   }
 
   render () {
     const {
-      error, isLoaded, profiles, searchfield, genderfield, currentPage, cardPerPage, paymentFilter
+      error,
+      isLoaded,
+      profiles,
+      searchfield,
+      genderfield,
+      currentPage,
+      cardPerPage,
+      paymentFilter
     } = this.state
     //pagination
     const indexOfLastCard = currentPage * cardPerPage
@@ -94,14 +102,25 @@ class App extends Component {
 
     //filter by payment method
     const filterByPayment = currentCard.filter(({ PaymentMethod }) => {
-     return PaymentMethod.includes(paymentFilter)
+      return PaymentMethod.includes(paymentFilter)
     })
 
-    let displayRecords = currentCard;
-    if(paymentFilter.length) {
-      displayRecords = filterByPayment;
+    if (paymentFilter.length) {
+      displayProfiles = filterByPayment
+
+      if (searchfield.length >= 1)
+        searchRecords = filterByPayment.filter(
+          users =>
+            users.FirstName.toLowerCase().includes(searchfield.toLowerCase()) ||
+            users.LastName.toLowerCase().includes(searchfield.toLowerCase())
+        )
     }
 
+    if (searchfield.length >= 1) {
+      displayProfiles = searchRecords
+    }
+
+    //rendering
     if (error) {
       return (
         <div className='error'>! Please check your internet connection</div>
@@ -118,11 +137,13 @@ class App extends Component {
         <div className='page'>
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
-          <GenderFilter genderChange={this.onGenderChange} />
           <SearchBox searchChange={this.onSearchChange} />
+          <GenderFilter genderChange={this.onGenderChange} />
+          <FilterByPaymentMtd paymentMtd={this.onPaymentMtdChange} />
+
           <Pagination
             cardPerPage={cardPerPage}
-            totalCards={profiles.length} //20
+            totalCards={profiles.length}
             paginate={paginate}
           />
           <CardList profiles={displayProfiles} />
