@@ -4,7 +4,7 @@ const FilterByPaymentMtd = ({ paymentMtd }) => {
   return (
     <>
       <label>Filter by payment method</label>
-      
+
       <select onChange={e => paymentMtd(e)}>
         <option value=''>All</option>
         <option value='check'>Check</option>

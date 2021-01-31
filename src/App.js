@@ -55,14 +55,7 @@ class App extends Component {
 
   render () {
     const {
-      error,
-      isLoaded,
-      profiles,
-      searchfield,
-      genderfield,
-      currentPage,
-      cardPerPage,
-      paymentFilter
+      error, isLoaded, profiles, searchfield, genderfield, currentPage, cardPerPage, paymentFilter
     } = this.state
     //pagination
     const indexOfLastCard = currentPage * cardPerPage
