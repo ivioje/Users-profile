@@ -55,7 +55,14 @@ class App extends Component {
 
   render () {
     const {
-      error, isLoaded, profiles, searchfield, genderfield, currentPage, cardPerPage, paymentFilter
+      error,
+      isLoaded,
+      profiles,
+      searchfield,
+      genderfield,
+      currentPage,
+      cardPerPage,
+      paymentFilter
     } = this.state
     //pagination
     const indexOfLastCard = currentPage * cardPerPage
@@ -130,10 +137,11 @@ class App extends Component {
         <div className='page'>
           <p>this project is under construction...</p>
           <h4>title & light/dark mode</h4>
-          <SearchBox searchChange={this.onSearchChange} />
-          <GenderFilter genderChange={this.onGenderChange} />
-          <FilterByPaymentMtd paymentMtd={this.onPaymentMtdChange} />
-
+          <div className='sub_page'>
+            <SearchBox searchChange={this.onSearchChange} />
+            <GenderFilter genderChange={this.onGenderChange} />
+            <FilterByPaymentMtd paymentMtd={this.onPaymentMtdChange} />
+          </div>
           <Pagination
             cardPerPage={cardPerPage}
             totalCards={profiles.length}

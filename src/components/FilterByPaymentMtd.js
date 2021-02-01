@@ -2,7 +2,7 @@ import React from 'react'
 
 const FilterByPaymentMtd = ({ paymentMtd }) => {
   return (
-    <>
+    <div>
       <label>Filter by payment method</label>
 
       <select onChange={e => paymentMtd(e)}>
@@ -12,7 +12,7 @@ const FilterByPaymentMtd = ({ paymentMtd }) => {
         <option value='money order'>Money Order</option>
         <option value='paypal'>paypal</option>
       </select>
-    </>
+    </div>
   )
 }
 
