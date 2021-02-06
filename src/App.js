@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import CardList from './components/CardList'
-// import FilterByPaymentMtd from './components/FilterByPaymentMtd'
-// import GenderFilter from './components/GenderFilter'
+import Header from './components/Header'
 import Pagination from './components/Pagination'
 import SearchBox from './components/searchBox'
 import SkeletonCard from './components/SkeletonCard.js'
@@ -135,21 +134,15 @@ class App extends Component {
       )
     } else {
       return (
-        <div className='page'>
-          <p>this project is under construction...</p>
-          <h4>title & light/dark mode</h4>
-          <div className='sub_page'>
-            <SearchBox searchChange={this.onSearchChange} />
+        <div>
+         <Header profiles={profiles} currentCard={currentCard} searchChange={this.onSearchChange} searchfield={searchfield}/>
             <SideNav genderChange={this.onGenderChange} paymentMtd={this.onPaymentMtdChange} />
-            {/* <GenderFilter genderChange={this.onGenderChange} />
-            <FilterByPaymentMtd paymentMtd={this.onPaymentMtdChange} /> */}
-          </div>
+          <CardList profiles={displayProfiles} />
           <Pagination
             cardPerPage={cardPerPage}
             totalCards={profiles.length}
             paginate={paginate}
           />
-          <CardList profiles={displayProfiles} />
         </div>
       )
     }

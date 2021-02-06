@@ -1,14 +1,17 @@
-import React from 'react';
+import React from 'react'
 import GenderFilter from './GenderFilter'
 import FilterByPaymentMtd from './FilterByPaymentMtd'
+import '../index.css'
 
 const SideNav = ({ genderChange, paymentMtd }) => {
-    return ( 
-        <div>
-<GenderFilter genderChange= {genderChange}/>
-            <FilterByPaymentMtd paymentMtd={paymentMtd}/>
-        </div>
-     );
+  return (
+    <div className='sidebar'>
+        <div className='navItems'>
+      <GenderFilter genderChange={genderChange} />
+      <FilterByPaymentMtd paymentMtd={paymentMtd} />
+      </div>
+    </div>
+  )
 }
- 
-export default SideNav;
+
+export default SideNav
