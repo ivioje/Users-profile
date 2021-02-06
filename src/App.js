@@ -135,8 +135,16 @@ class App extends Component {
     } else {
       return (
         <div>
-         <Header profiles={profiles} currentCard={currentCard} searchChange={this.onSearchChange} searchfield={searchfield}/>
-            <SideNav genderChange={this.onGenderChange} paymentMtd={this.onPaymentMtdChange} />
+          <Header
+            profiles={profiles}
+            currentCard={currentCard}
+            searchChange={this.onSearchChange}
+            searchfield={searchfield}
+          />
+          <SideNav
+            genderChange={this.onGenderChange}
+            paymentMtd={this.onPaymentMtdChange}
+          />
           <CardList profiles={displayProfiles} />
           <Pagination
             cardPerPage={cardPerPage}
