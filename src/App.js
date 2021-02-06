@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import './App.css'
 import CardList from './components/CardList'
-import FilterByPaymentMtd from './components/FilterByPaymentMtd'
-import GenderFilter from './components/GenderFilter'
+// import FilterByPaymentMtd from './components/FilterByPaymentMtd'
+// import GenderFilter from './components/GenderFilter'
 import Pagination from './components/Pagination'
 import SearchBox from './components/searchBox'
 import SkeletonCard from './components/SkeletonCard.js'
+import SideNav from './components/SideNav'
 
 class App extends Component {
   constructor (props) {
@@ -139,8 +140,9 @@ class App extends Component {
           <h4>title & light/dark mode</h4>
           <div className='sub_page'>
             <SearchBox searchChange={this.onSearchChange} />
-            <GenderFilter genderChange={this.onGenderChange} />
-            <FilterByPaymentMtd paymentMtd={this.onPaymentMtdChange} />
+            <SideNav genderChange={this.onGenderChange} paymentMtd={this.onPaymentMtdChange} />
+            {/* <GenderFilter genderChange={this.onGenderChange} />
+            <FilterByPaymentMtd paymentMtd={this.onPaymentMtdChange} /> */}
           </div>
           <Pagination
             cardPerPage={cardPerPage}
