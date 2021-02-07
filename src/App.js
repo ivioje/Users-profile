@@ -82,7 +82,6 @@ class App extends Component {
       return Gender.includes(genderfield)
     })
 
-    //
     let displayProfiles = currentCard
 
     if (genderfield.length) {
@@ -131,17 +130,21 @@ class App extends Component {
     } else {
       return (
         <div>
+          <div>
           <Header
             profiles={profiles}
             currentCard={currentCard}
             searchChange={this.onSearchChange}
             searchfield={searchfield}
           />
+          </div>
+          <div className='body'>
           <SideNav
             genderChange={this.onGenderChange}
             paymentMtd={this.onPaymentMtdChange}
           />
           <CardList profiles={displayProfiles} />
+          </div>
           <Pagination
             cardPerPage={cardPerPage}
             totalCards={profiles.length}

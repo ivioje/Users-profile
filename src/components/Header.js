@@ -11,7 +11,7 @@ const Header = ({ currentCard, searchfield, searchChange }) => {
   )
 
   return (
-    <div>
+    <div className='head'>
       <p>this project is under construction...</p>
       <h4>title & light/dark mode</h4>
       <SearchBox searchChange={searchChange} searchRecords={searchRecords}/>
