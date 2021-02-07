@@ -104,7 +104,6 @@ class App extends Component {
     const filterByPayment = currentCard.filter(({ PaymentMethod }) => {
       return PaymentMethod.includes(paymentFilter)
     })
-
     if (paymentFilter.length) {
       displayProfiles = filterByPayment
 

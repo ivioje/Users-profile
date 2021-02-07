@@ -4,6 +4,7 @@ import FilterByPaymentMtd from './FilterByPaymentMtd'
 import '../index.css'
 
 const SideNav = ({ genderChange, paymentMtd }) => {
+  
   return (
     <div className='sidebar'>
         <div className='navItems'>
