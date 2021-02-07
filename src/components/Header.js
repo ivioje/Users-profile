@@ -14,7 +14,7 @@ const Header = ({ currentCard, searchfield, searchChange }) => {
     <div>
       <p>this project is under construction...</p>
       <h4>title & light/dark mode</h4>
-      <SearchBox searchChange={searchChange} />
+      <SearchBox searchChange={searchChange} searchRecords={searchRecords}/>
     </div>
   )
 }

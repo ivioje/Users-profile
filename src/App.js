@@ -3,7 +3,6 @@ import './App.css'
 import CardList from './components/CardList'
 import Header from './components/Header'
 import Pagination from './components/Pagination'
-import SearchBox from './components/searchBox'
 import SkeletonCard from './components/SkeletonCard.js'
 import SideNav from './components/SideNav'
 
@@ -121,9 +120,7 @@ class App extends Component {
 
     //rendering
     if (error) {
-      return (
-        <div className='error'>! Please check your internet connection</div>
-      )
+      return <div className='error'>!Please check your internet connection</div>
     } else if (!isLoaded) {
       return (
         <div style={{ textAlign: 'center' }}>
