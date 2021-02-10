@@ -121,3 +121,13 @@ outline: wheat;
   width: 80%;
 }
 
+.sidebar {
+  width: 300px;
+  background-color: blanchedalmond;
+  height: 100vh;
+}
+@media screen and (max-width: 850px) {
+  .sidebar {
+    width: 200px;
+  }
+}

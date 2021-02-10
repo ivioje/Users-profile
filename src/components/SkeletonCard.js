@@ -15,7 +15,7 @@ const SkeletonCard = () => {
         {Array(20)
           .fill()
           .map((users, i) => (
-            <div key={i} className='all_details load'>
+            <div key={users} className='all_details load'>
               <div>
                 <Skeleton height={40} width={280} />
               </div>
