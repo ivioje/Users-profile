@@ -4,6 +4,7 @@ body {
   font-family: serif;
   width: 100%;
   font-family: "Antic Slab", serif;
+  background: rgb(255, 254, 253);
 }
 
 .users {
@@ -39,8 +40,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
   flex-wrap: wrap;
+  
 }
 .header {
   display: flex;
@@ -59,6 +60,7 @@ body {
 }
 .all_details {
   padding: 10px;
+
 }
 .load p b {
   margin: 5px;
@@ -76,10 +78,7 @@ input[type="search"] {
   border: 1px solid rgb(231, 231, 231);
   width: 100%;
   text-align: center;
-   -webkit-box-shadow: 0px 5px 5px 0px rgba(167, 167, 167, 0.48);
-  -moz-box-shadow: 0px 2px 2px 0px rgba(170, 170, 170, 0.48);
-  box-shadow: 0px 1px 1px 0px rgba(223, 221, 221, 0.38);
-outline: wheat;
+  outline: wheat;
 }
 .paginate {
   margin: 20px;
@@ -100,15 +99,12 @@ outline: wheat;
   color: rgb(36, 36, 36);
   border-radius: 50%;
   width: 100%;
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(167, 167, 167, 0.48);
-  -moz-box-shadow: 0px 2px 2px 0px rgba(170, 170, 170, 0.48);
-  box-shadow: 0px 2px 2px 0px rgba(206, 206, 206, 0.48);
-}
+  }
 .paginate div p {
   margin: 10px;
 }
 
-.sub_page {
+/* .sub_page {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -119,13 +115,24 @@ outline: wheat;
   -moz-box-shadow: 0px 2px 2px 0px rgba(170, 170, 170, 0.48);
   box-shadow: 0px 2px 2px 0px rgba(230, 227, 227, 0.48);
   width: 80%;
-}
+} */
 
 .sidebar {
   width: 300px;
-  background-color: blanchedalmond;
   height: 100vh;
+  border-right: 1px solid rgb(236, 229, 225);
+  margin: 5px;
+  padding: 10px;
+ 
 }
+.navItems {
+ display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 25vh;
+}
+
 @media screen and (max-width: 850px) {
   .sidebar {
     width: 200px;

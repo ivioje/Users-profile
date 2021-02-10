@@ -2,7 +2,7 @@ import React from "react";
 
 const GenderFilter = ({genderChange}) => {
   return (
-    <div>
+    <div style={{display: 'block'}}>
       <label>Filter by gender</label>
 
       <select onChange={e => genderChange(e)}>

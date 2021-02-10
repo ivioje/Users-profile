@@ -7,7 +7,7 @@ const SkeletonCard = () => {
       {Array(1)
         .fill()
         .map(i => (
-          <div className='search-placeholder'>
+          <div className='search-placeholder' key={i}>
             <Skeleton height={35} width={`50%`} />
           </div>
         ))}
