@@ -3,9 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-
-
 .error {
   font-size: 30px;
   color: red;
@@ -18,4 +15,3 @@
 .head {
 display: flex;
 }
-@media screen and (max-width: )
