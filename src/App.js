@@ -28,7 +28,7 @@ class App extends Component {
         result => {
           const timer = setTimeout(() => {
             this.setState({ isLoaded: true, profiles: result.records.profiles })
-          }, 2000)
+          }, 5000)
           return () => clearTimeout(timer)
         },
         error => {

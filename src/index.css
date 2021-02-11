@@ -16,6 +16,8 @@ body {
 .all_details {
   padding: 10px;
   width: 40%;
+  background: rgb(245, 238, 238);
+  margin-left: 20px;
 }
 .users {
   border: 1px solid rgb(248, 247, 247);
