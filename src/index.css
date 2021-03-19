@@ -22,7 +22,7 @@ body {
 .users {
   border: 1px solid rgb(248, 247, 247);
   background-color: rgb(255, 255, 255);
-  width: 100%;
+  width: 80%;
   height: auto;
   border-radius: 5px;
   text-align: left;
@@ -78,7 +78,7 @@ input[type="search"] {
   border: 1px solid rgb(231, 231, 231);
   width: 100%;
   text-align: center;
-  outline: wheat;
+  outline: rgb(241, 239, 234);
 }
 
 /*pagination*/
@@ -105,37 +105,3 @@ input[type="search"] {
 .paginate div p {
   margin: 10px;
 }
-
-/* .sub_page {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 20px;
-  border-bottom: 1px solid rgb(230, 230, 230);
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(167, 167, 167, 0.48);
-  -moz-box-shadow: 0px 2px 2px 0px rgba(170, 170, 170, 0.48);
-  box-shadow: 0px 2px 2px 0px rgba(230, 227, 227, 0.48);
-  width: 80%;
-} */
-
-/* .sidebar {
-  width: 300px;
-  height: 100vh;
-  border-right: 1px solid rgb(236, 229, 225);
-  margin: 5px;
-  padding: 10px;
-} */
-/* .navItems {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 25vh;
-} */
-
-/* @media screen and (max-width: 850px) {
-  .sidebar {
-    width: 200px;
-  }
-} */

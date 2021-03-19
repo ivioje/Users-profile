@@ -5,7 +5,6 @@ import Header from './components/Header'
 import Pagination from './components/Pagination'
 import SkeletonCard from './components/SkeletonCard.js'
 import SideNav from './components/SideNav'
-import axios from 'axios';
 
 class App extends Component {
   constructor (props) {
@@ -22,38 +21,23 @@ class App extends Component {
     }
   }
 
-  // componentDidMount () {
-  //   fetch('https://api.enye.tech/v1/challenge/records')
-  //     .then(res => res.json())
-  //     .then(
-  //       result => {
-  //         const timer = setTimeout(() => {
-  //           this.setState({ isLoaded: true, profiles: result.records.profiles })
-  //         }, 5000)
-  //         return () => clearTimeout(timer)
-  //       },
-  //       error => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error
-  //         })
-  //       }
-  //     )
-  // }
-  async componentDidMount() {
-    const response =  await axios.get(`https://api.enye.tech/v1/challenge/records`, { headers: {
-  Accept: 'Access-Control-Allow-Origin'
-}
- });
- console.log(response.data);
-    const json = await response.json();
-    this.setState({ profiles: json });
-    error => {
-      this.setState({
-        isLoaded: true,
-        error
-      })
-    }
+  componentDidMount () {
+    fetch('https://api.enye.tech/v1/challenge/records')
+      .then(res => res.json())
+      .then(
+        result => {
+          const timer = setTimeout(() => {
+            this.setState({ isLoaded: true, profiles: result.records.profiles })
+          }, 5000)
+          return () => clearTimeout(timer)
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
   }
 
   onSearchChange = e => {
